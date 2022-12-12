@@ -9,6 +9,7 @@ class my_nn(torch.nn.Module):
         self.soft = torch.nn.Softmax()
         self.relu= torch.nn.ReLU()
     def forward(self,x):
+        x=x.reshape(-1,28*28)
         x=self.relu(self.linear1(x))
         x=self.relu(self.linear2(x))
         x=self.relu(self.linear3(x))
